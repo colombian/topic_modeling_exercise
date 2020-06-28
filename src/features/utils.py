@@ -38,7 +38,7 @@ def build_trigrams(data_words:List[List[str]], threshold:int=100) -> List[List[s
     trigram_mod = gensim.models.phrases.Phraser(trigram)
     return[trigram_mod[bigram_mod[doc]] for doc in data_words]
     
-def lemmatization(npl: English, texts:List[List[str]], allowed_postags:List[str]=['NOUN', 'ADJ', 'VERB', 'ADV']):
+def lemmatization(texts:List[List[str]], allowed_postags:List[str]=['NOUN', 'ADJ', 'VERB', 'ADV']) -> List[List[str]]:
     """https://spacy.io/api/annotation"""
     texts_out = []
     for sent in texts:
